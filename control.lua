@@ -68,7 +68,7 @@ local function onEntityBuild(e)
     local pos = entity.position
     local a = {{pos.x-2, pos.y-2}, {pos.x+2, pos.y+2}}
     local deep_oil = surface.find_entities_filtered{area=a, name="deep_oil"}
-    if #deep_oil == 0 then
+    if deep_oil == 0 then
       if player then
         player.insert{name="oil_rig", count= 1}
         player.print{"cargo-ship-message.error-place-on-water", entity.localised_name}
